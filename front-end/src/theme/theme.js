@@ -4,7 +4,7 @@ export default {
     colors: {
         primary: '#a007c5', //! <- Red #EE6352
         secondary: '#0599ff', //! <- Yellow #F0A202
-        black: 'rgba(39, 39, 44, 1)', //! <- Black #27272C
+        black: 'rgba(29, 29, 34, 1)', //! <- Black #27272C
         purple: 'rgba(128, 0, 128, 1)', //! <- Purple #800080
         accent: '#fe5a7b'
     },
