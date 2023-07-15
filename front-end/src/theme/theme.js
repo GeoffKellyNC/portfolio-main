@@ -17,7 +17,7 @@ export default {
         small: '1.2rem',
         medium: '1.6rem',
         large: '2.4rem',
-        xl: '2.8rem',
+        xl: '3.6rem',
         xxl: '5rem',
     },
     fontWeights: {

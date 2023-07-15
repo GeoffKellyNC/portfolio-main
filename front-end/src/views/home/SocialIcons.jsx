@@ -80,7 +80,7 @@ const StyledIcons = styled.div`
     width: -1px;
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 40px;
     right: auto;
     z-index: 0;
 

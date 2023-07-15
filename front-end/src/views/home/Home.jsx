@@ -2,7 +2,10 @@ import React, { useRef } from 'react'
 import styled from 'styled-components'
 
 //Components
+import Header from './sections/header/Header'
 import Nav from '../../nav/Nav'
+import SocialIcons from './SocialIcons'
+import ScrollBounce from './ScrollBounce'
 
 const Home = () => {
 
@@ -34,8 +37,10 @@ const Home = () => {
   return (
     <div>
       <Nav handleRefClick={handleRefClick} />
+      <SocialIcons />
+      <ScrollBounce />
       <HomeBody>
-
+        <Header /> 
       </HomeBody>
     </div>
   )
