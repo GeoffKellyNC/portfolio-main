@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import Typewriter from '../../TypeWriter'
 
+// Styled Imports
+import styled from 'styled-components'
 import { Button } from 'antd'
 
 const Header = () => {
@@ -41,10 +42,8 @@ const HeaderStyled = styled.div`
     color: white;
     width: 70%;
     margin: 0 auto;
-    position: relative;
-    top: 30%;
-    left: 15%;
     display: flex;
+    padding-left: 30%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -66,9 +65,12 @@ const HeaderStyled = styled.div`
     .header-tag {
         display: flex;
         align-items: center;
+        gap: 10px;
 
         & > span {
             font-size: ${pr => pr.theme.fontSizes.large};
+            font-family: ${pr => pr.theme.fonts.primary};
+
         }
     }
 
