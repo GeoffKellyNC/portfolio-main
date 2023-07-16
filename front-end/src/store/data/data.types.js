@@ -1,0 +1,1 @@
+export const GET_PROJECT_DATA = 'GET_PROJECT_DATA';
