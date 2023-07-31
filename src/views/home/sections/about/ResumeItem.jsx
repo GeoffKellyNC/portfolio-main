@@ -79,7 +79,7 @@ const ResItem = styled.div`
         font-family: ${pr => pr.theme.fonts.primary};
         margin: 5px 0;
         font-size: ${ pr => pr.theme.fontSizes.tiny};
-        line-height: 15px;
+        line-height: 20px;
     }
 
     .tech-tags {
