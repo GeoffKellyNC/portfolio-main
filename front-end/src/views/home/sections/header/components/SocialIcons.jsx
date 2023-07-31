@@ -78,7 +78,7 @@ export default SocialIcons;
 
 const StyledIcons = styled.div`
     width: -1px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 40px;
     right: auto;

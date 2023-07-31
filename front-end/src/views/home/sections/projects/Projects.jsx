@@ -2,6 +2,7 @@ import React from 'react'
 
 // Styled Imports
 import styled from 'styled-components'
+import projectTitle from '../../../../assets/titles/projects.png'
 
 // Redux Imports
 import { connect } from 'react-redux'
@@ -11,16 +12,16 @@ import Project from './components/Project'
 
 
 
+
 const Projects = ({
     projectsData,
     projectsRef
 }) => {
   return (
     <ProjectsSection>
-        <div ref={projectsRef}></div>
-        <div className = 'project-title'>
-            <span className = 'title-num'> 01 </span>
-            <span classname = 'title-text'> PROJECTS </span>
+        <div className = 'ref-top' ref={projectsRef}></div>
+        <div className = 'project-title-main'>
+            <img src = {projectTitle} alt = 'projects' />
         </div>
         <div className = 'projects-container'>
             {
@@ -43,6 +44,15 @@ export default connect(st => ({
 const ProjectsSection = styled.div`
     color: white;
     padding-top: 5rem;
+    margin: 10rem 0;
+    width: 100%;
+    background: ${pr => pr.theme.colors.black};
+
+
+    .project-title-main{
+        text-align: center;
+        width: 100%;
+    }
 
 `
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+
 const Nav = ({
     handleRefClick
 }) => {
@@ -48,6 +49,7 @@ const NavStyled = styled.div`
     overflow: hidden;
     z-index: 100;
     width: 100%; 
+    background: ${pr => pr.theme.colors.black};
 
     
     .links-container {

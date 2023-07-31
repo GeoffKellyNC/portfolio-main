@@ -22,14 +22,14 @@ export default ScrollBounce
 
 
 const ScrollBody = styled.div`
-    width: 100%;
+    width: 80%;
     position: absolute;
     font-size: ${(pr) => pr.theme.fontSizes.medium};
     color: ${pr => pr.theme.colors.accent};
     font-family: ${(pr) => pr.theme.fonts.primary};
     display: flex;
-    justify-content: space-around;
-    gap: 75%;
+    gap: 103%;
+    left: 9%;
     bottom: 2%;
 
     .scroll-down {

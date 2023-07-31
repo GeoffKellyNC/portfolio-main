@@ -1,13 +1,19 @@
 import React from 'react'
-import Typewriter from '../../TypeWriter'
+import Typewriter from './components/TypeWriter'
 
 // Styled Imports
 import styled from 'styled-components'
 import { Button } from 'antd'
 
+// Components Imports
+import SocialIcons from './components/ScrollBounce'
+import ScrollBounce from './components/SocialIcons'
+
 const Header = () => {
   return (
     <HeaderStyled>
+        <SocialIcons />
+        <ScrollBounce />
         <span className = 'header-title'>Hi, my name is...</span>
         <h1 className = 'header-name'> GEOFF KELLY </h1>
         <div className = 'header-tag'>

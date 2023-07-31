@@ -13,8 +13,8 @@ import AppNotification from '../../components/AppNotification'
 import Header from './sections/header/Header'
 import Nav from '../../nav/Nav'
 import Projects from './sections/projects/Projects'
-import SocialIcons from './SocialIcons'
-import ScrollBounce from './ScrollBounce'
+import About from './sections/about/About'
+import Contact from './sections/contact/Contact'
 
 const Home = () => {
 
@@ -23,27 +23,19 @@ const Home = () => {
   const contactRef = useRef()
   const dispatch = useDispatch()
 
-  const welcomeUser = () => {
-    dispatch({
-      type: notifyTypes.SET_APP_NOTIFICATION,
-      payload: "Thank you for visiting my site!"
-    })
-  }
+
 
 
   const handleRefClick = (e) => {
     switch(e.target.textContent){
       case 'PROJECTS' || '01':
-        console.log('Projects') //!REMOVE
         projectsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
         break;
       case 'ABOUT' || '02':
         aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start"})
-        console.log('About') //!REMOVE
         break
       case 'CONTACT' || '03':
         contactRef.current.scrollIntoView({ behavior: "smooth", block: "start"})
-        console.log('Contact') //!REMOVE
         break
       default:
         console.log("Didn't work...")
@@ -52,42 +44,46 @@ const Home = () => {
   }
 
   const setUp = useCallback(async () => {
-    welcomeUser()
-  }, [])
+    // Welcome User Notification
+    dispatch({
+      type: notifyTypes.SET_APP_NOTIFICATION,
+      payload: "Thank you for visiting my site!"
+    })
+  }, [dispatch])
 
   useEffect(() => {
     setUp()
   },[setUp])
 
   return (
-    <div>
+    <HomeStyled>
       <Nav handleRefClick={handleRefClick} />
       <AppNotification />
-      <SocialIcons />
-      <ScrollBounce />
-      <HomeBody>
+      <HeaderSection>
         <Header /> 
-        <Projects projectsRef = { projectsRef } />
-
-      </HomeBody>
-    </div>
+      </HeaderSection>
+      <Projects projectsRef = { projectsRef } />
+      <About aboutRef = { aboutRef } />
+      <Contact contactRef = { contactRef } />
+      
+    </HomeStyled>
   )
 }
 
 export default Home 
 
+const HomeStyled = styled.div`
+  background: ${pr => pr.theme.colors.black};
+  height: 100vh;
 
-const HomeBody = styled.div`
+`
+
+const HeaderSection = styled.div`
   background: ${pr => pr.theme.colors.black};
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
-
-
-
-
 `
+
