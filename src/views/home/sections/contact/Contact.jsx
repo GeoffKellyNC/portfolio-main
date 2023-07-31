@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import contactTitle from '../../../../assets/titles/contact.png'
 import ContactForm from './ContactForm'
+import SpaceManType from '../../../../components/animations/SpaceManType'
 
 import Email from '../../../../components/animations/Email'
 
@@ -15,10 +16,11 @@ const Contact = ({ contactRef }) => {
         </div>
         <div className="contact-container">
             <div className="contact-left">
-                <span> Left </span>
+                <SpaceManType />
             </div>
             <div className="contact-right">
                 <Email />
+                <span className = 'contact-text'> CONTACT ME </span>
                 <ContactForm />
             </div>
         </div>
@@ -29,7 +31,6 @@ const Contact = ({ contactRef }) => {
 export default Contact
 
 const ContactSection = styled.div`
-    margin: 30rem 0;
     width: 100%;
 
     .contact-title {
@@ -48,6 +49,13 @@ const ContactSection = styled.div`
 
     .contact-left {
         background: transparent; // Optional since by default, it's transparent
+    }
+
+    .contact-text{
+        font-family: ${pr => pr.theme.fonts.primary};
+        margin: 20px;
+        font-size: ${pr => pr.theme.fontSizes.medium};
+        color: white;
     }
 
     .contact-right {

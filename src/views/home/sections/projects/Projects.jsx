@@ -43,8 +43,6 @@ export default connect(st => ({
 
 const ProjectsSection = styled.div`
     color: white;
-    padding-top: 5rem;
-    margin: 10rem 0;
     width: 100%;
     background: ${pr => pr.theme.colors.black};
 

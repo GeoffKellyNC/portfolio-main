@@ -15,6 +15,10 @@ import Projects from './sections/projects/Projects'
 import About from './sections/about/About'
 import Contact from './sections/contact/Contact'
 
+// Animations
+import SpaceManType from '../../components/animations/SpaceManType'
+import SpaceMusic from '../../components/animations/SpaceMusic'
+
 const Home = () => {
 
   const projectsRef = useRef()
@@ -46,7 +50,7 @@ const Home = () => {
     // Welcome User Notification
     dispatch({
       type: notifyTypes.SET_APP_NOTIFICATION,
-      payload: "Thank you for visiting my site!"
+      payload: "Site Under Construction - Please Excuse the Mess! Some links may not work."
     })
   }, [dispatch])
 
@@ -63,6 +67,7 @@ const Home = () => {
       </HeaderSection>
       <Projects projectsRef = { projectsRef } />
       <About aboutRef = { aboutRef } />
+      <SpaceMusic />
       <Contact contactRef = { contactRef } />
       
     </HomeStyled>
@@ -74,6 +79,13 @@ export default Home
 const HomeStyled = styled.div`
   background: ${pr => pr.theme.colors.black};
   height: 100vh;
+
+  .space-type {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -8%;
+  }
 
 `
 

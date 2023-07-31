@@ -91,7 +91,6 @@ export default About
 const AboutSection = styled.div`
     background: ${pr => pr.theme.colors.black};
     color: white;
-    margin: 30rem 0;
 
     .about-title{
         font-size: ${pr => pr.theme.fontSizes.large};
