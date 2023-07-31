@@ -16,7 +16,6 @@ import About from './sections/about/About'
 import Contact from './sections/contact/Contact'
 
 // Animations
-import SpaceManType from '../../components/animations/SpaceManType'
 import SpaceMusic from '../../components/animations/SpaceMusic'
 
 const Home = () => {
