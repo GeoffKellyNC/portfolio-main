@@ -9,7 +9,7 @@ const sampleProjectData = [
         title: 'Berry Twitch Bot',
         description: 'Berry Bot is a full Stack Twitch Bot / API built to assist streamers make their streaming experience more streamlined. There are many features such as, a chat bot that moderates your chat, responds to users requests and commands. The ability to control ads on channel. Point tracking system for misbehaving users. Full Authentication system through twitch. Ability to start polls, see moderation stats, channel stats and more. Work in progress with many more features to come.',
         imageSrc: berrySiteImg ,
-        technologies:  ['ReactJS', 'Redux', 'Node.JS', 'Express','TWITCH API','SQL', 'MongoDb', 'Git'],
+        technologies:  ['ReactJS', 'Redux', 'Node.JS', 'GPT-4','TWITCH API','OpenAi', 'MongoDb', 'Git'],
         githubLink: 'https://github.com/GeoffKellyNC',
         liveLink: 'https://berrytwitchbot.netlify.app/'
 
