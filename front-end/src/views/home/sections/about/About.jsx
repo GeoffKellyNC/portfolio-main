@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { connect } from 'react-redux'
 
 import ResumeItem from './ResumeItem'
 import aboutTitle from '../../../../assets/titles/about.png'
@@ -46,13 +45,9 @@ const resumeData = [
 const About = ({
     aboutRef
 }) => {
+    // eslint-disable-next-line no-unused-vars
     const [ selection, setSelection ] = useState('resume')
 
-
-    const handleSelect = (type) => {
-        setSelection(type)
-        return
-    }
 
   return (
     <AboutSection>

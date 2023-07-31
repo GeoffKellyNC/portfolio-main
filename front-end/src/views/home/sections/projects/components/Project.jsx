@@ -7,7 +7,6 @@ import { GithubOutlined } from '@ant-design/icons'
 import { CgWebsite } from 'react-icons/cg'
 
 const Project = ({ data }) => {
-  // Define an array of colors for the tags
   const tagColors = ['#2db7f5', '#f50', '#87d068', '#108ee9', '#eb2f96'];
 
   return (

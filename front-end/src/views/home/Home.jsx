@@ -4,7 +4,6 @@ import React, { useRef, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 
 //Redux Imports
-import { connect } from 'react-redux'
 import * as notifyTypes from '../../store/notifyState/notify.types'
 import { useDispatch } from 'react-redux'
 
