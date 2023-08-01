@@ -52,6 +52,19 @@ const ProjectsSection = styled.div`
         width: 100%;
     }
 
+    @media ${pr => pr.theme.devices.tablet} {
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            
+    }
+
+
+
+
 `
 
 

@@ -132,7 +132,7 @@ const StyledIcons = styled.div`
     color: ${(pr) => pr.theme.colors.secondary};
   }
 
-  @media (max-width: 956px) {
+  @media ${pr => pr.theme.devices.tablet} {
     display: none;
   }
 `;

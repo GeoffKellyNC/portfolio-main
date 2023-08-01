@@ -9,6 +9,8 @@ import { Button } from 'antd'
 import SocialIcons from './components/ScrollBounce'
 import ScrollBounce from './components/SocialIcons'
 
+import resume from '../../../../resume/geoff_kelly_0823.pdf'
+
 const Header = () => {
   return (
     <HeaderStyled>
@@ -27,15 +29,19 @@ const Header = () => {
             I am always seeking new challenges to enhance my abilities and bring your ideas to life.
             Let's work together and make a lasting impact on the world.
         </p>
-        <Button 
-            type='primary' 
-            style={{
-                width: '20%',
-                margin: '1rem 0',
-            }}
-            ghost
-            size='large'> 
-                RESUME 
+            <Button 
+                type='primary' 
+                style={{
+                    width: '20%',
+                    margin: '1rem 0',
+                }}
+                ghost
+                size='large'> 
+                                <a 
+                href={resume}
+                target="_blank"
+                rel="noreferrer"
+            > RESUME </a>
             </Button>
     </HeaderStyled>
   )

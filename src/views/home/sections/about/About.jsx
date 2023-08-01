@@ -148,5 +148,25 @@ const AboutSection = styled.div`
 
     }
 
+    @media ${pr => pr.theme.devices.tablet} {
+        .about-section {
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-left{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            font-family: ${pr => pr.theme.fonts.primary};
+        }
+    }
+
 
 `

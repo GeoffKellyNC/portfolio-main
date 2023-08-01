@@ -25,5 +25,11 @@ export default {
         light: 300,
         normal: 400,
         bold: 700,
+    },
+    devices: {
+        mobile: 'only screen and (max-width: 600px)',
+        tablet: 'only screen and (max-width: 1115px)',
+        laptop: 'only screen and (max-width: 1024px)',
+        desktop: 'only screen and (max-width: 1200px)'
     }
 }

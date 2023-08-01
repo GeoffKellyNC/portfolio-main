@@ -72,5 +72,9 @@ const ScrollBody = styled.div`
         }
     }
 
+    @media ${pr => pr.theme.devices.tablet} {
+        display: none;
+    }
+
 
 `

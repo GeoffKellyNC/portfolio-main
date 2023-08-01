@@ -59,6 +59,11 @@ const NavStyled = styled.div`
         align-items: center;
         gap: 2rem;
     }
+
+
+    @media ${pr => pr.theme.devices.tablet} {
+        display: none;
+    }
 `;
 
 const Button = styled.button`

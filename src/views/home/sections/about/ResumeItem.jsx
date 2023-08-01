@@ -86,5 +86,31 @@ const ResItem = styled.div`
         padding: 5px 0;
     }
 
+    @media ${pr => pr.theme.devices.tablet} {
+        flex-direction: column;
+        margin: 2rem 0;
+
+        .res-left {
+            width: 100%;
+            margin: 0;
+            justify-content: center;
+        }
+
+        .res-right {
+            width: 100%;
+            margin: 0;
+            justify-content: center;
+        }
+
+        .year {
+            font-size: ${pr => pr.theme.fontSizes.large};
+        }
+
+        .job-title{
+            font-size: ${ pr => pr.theme.fontSizes.large};
+        }
+        
+    }
+
 
 `

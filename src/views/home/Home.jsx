@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react'
+import React, { useRef, useEffect, useCallback, useState } from 'react'
 
 // Styled Imports
 import styled from 'styled-components'
@@ -15,10 +15,14 @@ import Projects from './sections/projects/Projects'
 import About from './sections/about/About'
 import Contact from './sections/contact/Contact'
 
+import { RxHamburgerMenu } from 'react-icons/rx'
+
 // Animations
 import SpaceMusic from '../../components/animations/SpaceMusic'
 
 const Home = () => {
+
+  const [mobileNavActive, setMobileNavActive] = useState(false)
 
   const projectsRef = useRef()
   const aboutRef = useRef()
@@ -59,7 +63,10 @@ const Home = () => {
 
   return (
     <HomeStyled>
-      <Nav handleRefClick={handleRefClick} />
+      {
+        !mobileNavActive ? <Nav handleRefClick={handleRefClick} /> : null
+      }
+      <RxHamburgerMenu className = 'mobile-nav-icon' />
       <AppNotification />
       <HeaderSection>
         <Header /> 
@@ -79,12 +86,27 @@ const HomeStyled = styled.div`
   background: ${pr => pr.theme.colors.black};
   height: 100vh;
 
-  .space-type {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: -8%;
+
+  .mobile-nav-icon {
+
+    display: none;
   }
+
+
+  @media ${pr => pr.theme.devices.tablet} {
+
+    width: 100%;
+
+
+    .mobile-nav-icon {
+      display: block;
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      font-size: 2rem;
+      color: ${pr => pr.theme.colors.primary};
+      z-index: 1000;
+    }
 
 `
 

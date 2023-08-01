@@ -99,9 +99,38 @@ const ProjectBody = styled.div`
     gap: 3%;
   }
 
-  @media (max-width: 850px) {
+  @media ${pr => pr.theme.devices.tablet} {
     flex-direction: column;
+    margin: 5rem 0;
     align-items: center;
-    gap: 10%;
+    gap: 50px;
+
+    .project-img {
+      width: 50%;
+      height: 30%;
+    }
+
+    .project-info {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5%;
+    }
+
+    .project-desc {
+      font-size: ${pr => pr.theme.fontSizes.small};
+      margin: 5% 0;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 5%;
+      margin: 5% 0;
+    }
+
+
+
   }
+
 `
