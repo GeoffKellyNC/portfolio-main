@@ -9,7 +9,7 @@ import { Button } from 'antd'
 import SocialIcons from './components/ScrollBounce'
 import ScrollBounce from './components/SocialIcons'
 
-import resume from '../../../../resume/geoff_kelly_0823.pdf'
+import resume from '../../../../resume/Geoffrey-Kelly-Resume.pdf'
 
 const Header = () => {
   return (
