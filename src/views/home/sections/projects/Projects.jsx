@@ -21,7 +21,7 @@ const Projects = ({
     <ProjectsSection>
         <div className = 'ref-top' ref={projectsRef}></div>
         <div className = 'project-title-main'>
-            <img src = {projectTitle} alt = 'projects' />
+            <span className = 'project-title-text'> 01 PROJECTS</span>
         </div>
         <div className = 'projects-container'>
             {
@@ -50,6 +50,10 @@ const ProjectsSection = styled.div`
     .project-title-main{
         text-align: center;
         width: 100%;
+        font-family: ${pr => pr.theme.fonts.secondary};
+        font-size: ${pr => pr.theme.fontSizes.xl};
+        margin: 3rem 0;
+        color: ${pr => pr.theme.colors.purple};
     }
 
     @media ${pr => pr.theme.devices.tablet} {

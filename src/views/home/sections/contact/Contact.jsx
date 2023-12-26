@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import contactTitle from '../../../../assets/titles/contact.png'
 import ContactForm from './ContactForm'
 import SpaceManType from '../../../../components/animations/SpaceManType'
 
@@ -12,7 +11,7 @@ const Contact = ({ contactRef }) => {
     <ContactSection>
         <div className="ref-top" ref={contactRef}></div>
         <div className="contact-title">
-            <img src={contactTitle} alt="contact-title" />
+            <span className = 'contact-title-text'> 03 CONTACT </span>
         </div>
         <div className="contact-container">
             <div className="contact-left">
@@ -35,6 +34,11 @@ const ContactSection = styled.div`
 
     .contact-title {
         text-align: center;
+        width: 100%;
+        font-family: ${pr => pr.theme.fonts.secondary};
+        font-size: ${pr => pr.theme.fontSizes.xl};
+        margin: 4rem 0;
+        color: ${pr => pr.theme.colors.primary};
     }
 
     .contact-container {

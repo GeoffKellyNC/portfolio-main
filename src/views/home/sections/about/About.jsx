@@ -3,13 +3,12 @@ import styled from 'styled-components'
 
 
 import ResumeItem from './ResumeItem'
-import aboutTitle from '../../../../assets/titles/about.png'
 
 const resumeData = [
     {
         title: 'Software Support Engineer',
         company: 'Nicus Software',
-        description: "In my role, I acted as the primary liaison for customers, delivering timely and effective software solutions and updates. I efficiently managed and promptly responded to all customer support requests, ensuring speedy problem resolution. Through collaborative efforts with customers via email and phone communication, I drove issue resolution to completion. I consistently met or exceeded established timeframes for resolving support requests, and when encountering complex issues, I escalated them to the appropriate teams. Additionally, I participated in an on-call rotation to provide vital business support outside of regular working hours. My strong communication skills were instrumental in troubleshooting intricate data flows, leading to improved system efficiency and user experience. I maintained an extensive knowledge base, accurately recording detailed information on technical work and support cases. Moreover, I contributed to the development and updating of low complexity functionalities in the Nicustool, including configuring processes and tables.",
+        description: "In my role, I primarily focused on coding and developing production-ready software, rigorously adhering to best practices in software engineering. My responsibilities included writing clean, efficient code, and actively participating in the grooming and testing processes to ensure high-quality outputs. While acting as a liaison for customers, I delivered software solutions and updates, integrating their feedback into development cycles. My role extended beyond traditional customer service, as I was deeply involved in the technical aspects of software development. I efficiently managed customer support requests, using these interactions to inform and refine the coding process. Participating in an on-call rotation, I provided essential technical support and problem-solving outside regular hours. My strong communication skills were crucial in troubleshooting complex coding issues, contributing significantly to system efficiency and user experience. In addition to maintaining a comprehensive knowledge base, I played a key role in the development and updating of functionalities in the Nicus tool, including configuring processes and tables, ensuring the delivery of robust and efficient software features.",
         year_start: '2022',
         year_end: null,
         technologies: ['SQL', 'Javascript', 'Python', 'Salesforce', 'Jira']
@@ -53,7 +52,7 @@ const About = ({
     <AboutSection>
         <div className = 'ref-top' ref = {aboutRef}></div>
         <div className = 'about-title'>
-            <img src = {aboutTitle} alt = 'about title' />
+            <span className = 'about-title-text'> 02 ABOUT ME </span>
         </div>
         <div className = 'about-section'>
             <div className = 'about-left'>
@@ -93,9 +92,11 @@ const AboutSection = styled.div`
     color: white;
 
     .about-title{
-        font-size: ${pr => pr.theme.fontSizes.large};
+        font-size: ${pr => pr.theme.fontSizes.xl};
         font-family: ${pr => pr.theme.fonts.secondary};
         text-align: center;
+        margin: 3rem 0;
+        color: ${pr => pr.theme.colors.accent};
     }
 
     .about-section {
