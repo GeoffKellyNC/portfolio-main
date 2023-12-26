@@ -22,6 +22,7 @@ import SpaceMusic from '../../components/animations/SpaceMusic'
 
 const Home = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const [mobileNavActive, setMobileNavActive] = useState(false)
 
   const projectsRef = useRef()

@@ -2,7 +2,6 @@ import React from 'react'
 
 // Styled Imports
 import styled from 'styled-components'
-import projectTitle from '../../../../assets/titles/projects.png'
 
 // Redux Imports
 import { connect } from 'react-redux'
