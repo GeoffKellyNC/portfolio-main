@@ -12,6 +12,9 @@ function App() {
 
   useEffect(() => {
     ReactGA.initialize('G-6YS6GC8BQ5');
+  }, []);
+
+  useEffect(() => {
     ReactGA.pageview(location.pathname + location.search);
   } , [location]);
 
