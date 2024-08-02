@@ -1,69 +1,56 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Input, Button } from 'antd'
+import { Input, Button, Form } from 'antd'
 
-const initialValues = {
-    name: '',
-    email: '',
-    message: ''
-}
+const { TextArea } = Input
 
 const ContactForm = () => {
-    const [values, setValues] = useState(initialValues)
-    const [nameStatus, setNameStatus] = useState('valid')
-    const [emailStatus, setEmailStatus] = useState('valid')
-    const [messageStatus, setMessageStatus] = useState('valid')
+  const [form] = Form.useForm()
 
-
-    const { TextArea } = Input
-
-    const handleChange = e => {
-        console.log(e.target.value)
-        const { name, value } = e.target
-
-        setValues({
-            ...values,
-            [name]: value
-        })
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault()
-        console.log(values)
-    }
+  const handleSubmit = (values) => {
+    console.log(values)
+    // Here you would typically send the form data to your backend
+    form.resetFields()
+  }
 
   return (
     <ContactFormStyled>
-        <Input 
-            placeholder = 'Name' 
-            style = {{marginBottom: '1rem'}}
-            name = 'name'
-            value = {values.name}
-            onChange = {handleChange}
-            status = {nameStatus}
-        />
-        <Input 
-            placeholder = 'Email' 
-            style = {{marginBottom: '1rem'}}
-            name = 'email'
-            value = {values.email}
-            onChange = {handleChange}
-            status = {emailStatus}
-        />
-        <TextArea
-            placeholder = 'Message'
-            name = 'message'
-            value = {values.message}
-            onChange = {handleChange}
-            autoSize = {{ minRows: 6, maxRows: 8 }}
-            status = {messageStatus}
-        />
-        <Button
-            type = 'primary'
-            onClick = {handleSubmit}
-            style = {{marginTop: '1rem'}}
-        > Submit </Button>
+      <Form
+        form={form}
+        name="contact"
+        onFinish={handleSubmit}
+        layout="vertical"
+      >
+        <Form.Item
+          name="name"
+          rules={[{ required: true, message: 'Please input your name!' }]}
+        >
+          <Input placeholder="Name" />
+        </Form.Item>
+        <Form.Item
+          name="email"
+          rules={[
+            { required: true, message: 'Please input your email!' },
+            { type: 'email', message: 'Please enter a valid email!' }
+          ]}
+        >
+          <Input placeholder="Email" />
+        </Form.Item>
+        <Form.Item
+          name="message"
+          rules={[{ required: true, message: 'Please input your message!' }]}
+        >
+          <TextArea
+            placeholder="Message"
+            autoSize={{ minRows: 6, maxRows: 8 }}
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
     </ContactFormStyled>
   )
 }
@@ -71,11 +58,26 @@ const ContactForm = () => {
 export default ContactForm
 
 const ContactFormStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-    gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 
+  .ant-form-item {
+    margin-bottom: 1rem;
+  }
 
+  .ant-input {
+    background-color: ${pr => pr.theme.colors.black};
+    color: ${pr => pr.theme.colors.offWhite};
+    border-color: ${pr => pr.theme.colors.primary};
+  }
+
+  .ant-btn-primary {
+    background-color: ${pr => pr.theme.colors.primary};
+    border-color: ${pr => pr.theme.colors.primary};
+  }
+
+  @media ${pr => pr.theme.devices.mobile} {
+    width: 90%;
+  }
 `

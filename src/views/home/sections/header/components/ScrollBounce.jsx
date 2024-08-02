@@ -1,80 +1,64 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import { AiOutlineArrowDown } from 'react-icons/ai'
 
 const ScrollBounce = () => {
   return (
     <ScrollBody>
-        <div className="scroll-down">
-            <span className="scroll-text">scroll down</span>
-            <AiOutlineArrowDown className="scroll-arrow" />
-        </div>
-        <div className="scroll-down scroll-down--left">
-            <span className="scroll-text">scroll down</span>
-            <AiOutlineArrowDown className="scroll-arrow" />
-        </div>
+      <div className="scroll-down">
+        <span className="scroll-text">scroll down</span>
+        <AiOutlineArrowDown className="scroll-arrow" />
+      </div>
+      <div className="scroll-down scroll-down--left">
+        <span className="scroll-text">scroll down</span>
+        <AiOutlineArrowDown className="scroll-arrow" />
+      </div>
     </ScrollBody>
   )
 }
 
 export default ScrollBounce
 
-
 const ScrollBody = styled.div`
-    width: 80%;
-    position: absolute;
-    font-size: ${(pr) => pr.theme.fontSizes.medium};
-    color: ${pr => pr.theme.colors.accent};
-    font-family: ${(pr) => pr.theme.fonts.primary};
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: ${pr => pr.theme.colors.accent};
+  font-family: ${pr => pr.theme.fonts.primary};
+
+  .scroll-down {
     display: flex;
-    gap: 103%;
-    left: 9%;
-    bottom: 2%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .scroll-down {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+  .scroll-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    animation: bounce 1s linear infinite;
+    font-size: ${pr => pr.theme.fontSizes.small};
+  }
+
+  .scroll-arrow {
+    margin-top: 0.5rem;
+    font-size: ${pr => pr.theme.fontSizes.medium};
+    animation: bounce 1s linear infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
     }
-
-
-    .scroll-down--left {
-        
-        font-family: ${(pr) => pr.theme.fonts.primary};
+    50% {
+      transform: translateY(-10px);
     }
+  }
 
-    .scroll-down span {
-        writing-mode: vertical-rl;
-        text-orientation: mixed;
-        animation-name: bounce-1;
-        animation-timing-function: linear;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-    }
-
-    @keyframes bounce-1 {
-        0% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        }
-
-        50% {
-        -webkit-transform: translateY(-15px);
-        transform: translateY(-15px);
-        }
-        100% {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        }
-    }
-
-    @media ${pr => pr.theme.devices.tablet} {
-        display: none;
-    }
-
-
+  @media ${pr => pr.theme.devices.tablet} {
+    display: none;
+  }
 `

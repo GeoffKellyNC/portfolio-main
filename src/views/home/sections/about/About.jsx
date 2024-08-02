@@ -41,45 +41,29 @@ const resumeData = [
 
 
 
-const About = ({
-    aboutRef
-}) => {
-    // eslint-disable-next-line no-unused-vars
-    const [ selection, setSelection ] = useState('resume')
-
-
-  return (
-    <AboutSection>
-        <div className = 'ref-top' ref = {aboutRef}></div>
-        <div className = 'about-title'>
-            <span className = 'about-title-text'> 02 ABOUT ME </span>
-        </div>
-        <div className = 'about-section'>
-            <div className = 'about-left'>
-                <div className = 'about-left-title'>
-                    <span className = 'about-left-title-text'> MY STORY </span>
-                </div>
-                <div className = 'about-p'>
-                <p>
+const About = ({ aboutRef }) => {
+    return (
+      <AboutSection>
+        <div className='ref-top' ref={aboutRef}></div>
+        <h2 className='about-title'>02 ABOUT ME</h2>
+        <div className='about-section'>
+          <div className='about-left'>
+            <h3 className='about-left-title'>MY STORY</h3>
+            <div className='about-p'>
+              <p>
                         My journey hasn't been a typical one. I grew up bouncing from one foster home to another, often facing challenging circumstances. During this time, I found solace in technology. This interest initially was an escape, but over time, it blossomed into a passion. I'm not a traditionally trained developer, but I am a self-taught coder who learned the craft out of sheer curiosity and necessity.
                         Despite the difficulties I encountered in my early life, I've cultivated an analytical mindset and a tenacious spirit. I'm not afraid of obstacles or failure because I've learned that they're often stepping stones to success. It might take me a little more time to understand a new concept, but once I get it, I really get it.
                         My experience has also taught me the value of perseverance and grit. I've built complex applications from scratch and have mastered technologies that were once foreign to me. I might not have a traditional background, but I have the determination, the eagerness, and the proven ability to learn and grow.
                         If you're looking for someone with a unique perspective, who brings real-world resilience to their work, I could be the right fit. I'm hoping to find a team where I can continue my journey, learning from others while also contributing my own insights and skills.
-                    </p>
-                </div>
-            </div>
-            <div className = 'about-right'>
-                {
-                    selection === 'resume' ? (
-                        resumeData.length > 1 ? (
-                            resumeData.map((item, idx) => {
-                                return <ResumeItem resData = {item} key = {idx} />
-                            })
-                        ) : 'No ResumeData'
-                    ) : null
-                }
-            </div>
+                        </p>
+          </div>
         </div>
+        <div className='about-right'>
+          {resumeData.map((item, idx) => (
+            <ResumeItem resData={item} key={idx} />
+          ))}
+        </div>
+      </div>
     </AboutSection>
   )
 }

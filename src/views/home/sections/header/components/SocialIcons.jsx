@@ -1,74 +1,33 @@
 import React from "react";
-
 import styled from "styled-components";
-
-
-import { v4 as uuid } from 'uuid';
-
-//!-- Importing React Icons Components --//
-import { FaGithubAlt, FaTwitter } from 'react-icons/fa'; //! Github Icon / Twitter Icon
-import { AiOutlineLinkedin } from 'react-icons/ai'; //! Linkedin Icon
-import { ImInstagram } from 'react-icons/im'; //! Instagram Icon
-import { MdEmail } from 'react-icons/md'; //! Email Icon
-
-
+import { FaGithubAlt, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const iconData = [
-    {
-        id: uuid(),
-        name: 'Github',
-        icon: <FaGithubAlt />,
-        link: 'https://github.com/GeoffKellyNC',
-        alt: 'Github Icon'
-    },
-    {
-        id: uuid(),
-        name: 'LinkedIn',
-        icon: <AiOutlineLinkedin />,
-        link: 'https://www.linkedin.com/in/geoffkelly/',
-        alt: 'LinkedIn Icon'
-    },
-    {
-        id: uuid(),
-        name: 'Twitter',
-        icon: <FaTwitter />,
-        link: 'https://twitter.com',
-        alt: 'Twitter Icon'
-    },
-    {
-        id: uuid(),
-        name: 'Instagram',
-        icon: <ImInstagram />,
-        link: 'https://www.instagram.com',
-        alt: 'Instagram Icon'
-    },
-    {
-        id: uuid(),
-        name: 'Email',
-        icon: <MdEmail />,
-        link: '#',
-        alt: 'Email Icon'
-    }
-]
+  { name: 'Github', icon: <FaGithubAlt />, link: 'https://github.com/GeoffKellyNC' },
+  { name: 'LinkedIn', icon: <FaLinkedinIn />, link: 'https://www.linkedin.com/in/geoffkelly/' },
+  { name: 'Twitter', icon: <FaTwitter />, link: 'https://twitter.com' },
+  { name: 'Instagram', icon: <FaInstagram />, link: 'https://www.instagram.com' },
+  { name: 'Email', icon: <MdEmail />, link: '#' },
+];
 
 const SocialIcons = () => {
   return (
-    <StyledIcons className="social-icons-container">
+    <StyledIcons>
       <ul>
-        {iconData.map((icon) => {
-          return (
-            <li key={icon.id}>
-              <a
-                href={icon.link}
-                className={`${icon.name}-icon icon`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {icon.icon}
-              </a>
-            </li>
-          );
-        })}
+        {iconData.map((icon) => (
+          <li key={icon.name}>
+            <a
+              href={icon.link}
+              className={`${icon.name}-icon icon`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${icon.name} profile`}
+            >
+              {icon.icon}
+            </a>s
+          </li>
+        ))}
       </ul>
     </StyledIcons>
   );
@@ -77,59 +36,42 @@ const SocialIcons = () => {
 export default SocialIcons;
 
 const StyledIcons = styled.div`
-    width: -1px;
-    position: absolute;
-    bottom: 0;
-    left: 40px;
-    right: auto;
-    z-index: 0;
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  z-index: 10;
 
   ul {
     list-style: none;
-    height: 23em;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  svg {
-    margin: 0.5em 0;
-  }
-
-  svg:hover {
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    transform: scale(3);
-  }
-
-  .Email-icon::after {
-    content: "";
-    display: block;
-    width: 2px;
-    height: 6em;
-    margin: 0px auto;
-    background-color: #0599ff;
-    background-size: 300% 300%;
-    background-position: 0 50%;
-    border-radius: calc(2 * var(--border-width));
-    animation: moveGradient 4s alternate infinite;
-  }
-
-  @keyframes moveGradient {
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .Email-icon::after:hover {
-    background-color: ${(pr) => pr.theme.colors.primary};
+  li {
+    margin: 0.5rem 0;
   }
 
   .icon {
-    font-size: 1.3rem;
-    margin: 0.5rem;
-    color: #0599ff;
+    font-size: 1.5rem;
+    color: ${pr => pr.theme.colors.accent};
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: ${pr => pr.theme.colors.secondary};
+      transform: translateY(-3px);
+    }
   }
 
-  .icon:hover {
-    color: ${(pr) => pr.theme.colors.secondary};
+  li:last-child::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: ${pr => pr.theme.colors.accent};
   }
 
   @media ${pr => pr.theme.devices.tablet} {
